@@ -2,14 +2,20 @@
 
 int main()
 {
-    Integral I1;
-    std::cout << "Enter number of iterations:" << std::endl;
-    int num;
-    std::cin >> num;
-    I1.LeftRectanglesMethod(num);
-    I1.RightRectanglesMethod(num);
-    I1.MiddleRectanglesMethod(num);
-    I1.TrapezeMethod(num);
-    I1.SimpsonMethod(num);
+//    std::cout << "Enter number of iterations:" << std::endl;
+    double eps;
+    double a, b;
+    std::cout << "Enter eps:" << std::endl;
+    std::cin >> eps;
+    std::cout << "Enter a border:" << std::endl;
+    std::cin >> a;
+    std::cout << "Enter b border:" << std::endl;
+    std::cin >> b;
+    Integral I1(eps, a, b);
+    I1.LeftRectanglesMethod(I1.calcNforRc());
+    I1.RightRectanglesMethod(I1.calcNforRc());
+    I1.MiddleRectanglesMethod(I1.calcNforRc());
+    I1.TrapezeMethod(I1.calcNforTr());
+    I1.SimpsonMethod(I1.calcNforSm());
     return 0;
 }

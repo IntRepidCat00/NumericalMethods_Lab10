@@ -16,17 +16,18 @@ public:
         : eps{Neps}, Abord{NAbord}, Bbord{NBbord}
     {}
     double funcAt(double x);
-    double calcDeriv1(double x);
-    double calcDeriv2(double x);
-    double calcDeriv4(double x);
+    double calcDeriv(double x, int order);
     double RectanglesError(int N);
     double TrapezeError(int N);
     double SimpsonError(int N);
-    void SimpsonMethod(int N);
-    void LeftRectanglesMethod(int N);
-    void RightRectanglesMethod(int N);
-    void MiddleRectanglesMethod(int N);
-    void TrapezeMethod(int N);
+    double SimpsonMethod(int N, bool printOrNo = true);
+    double LeftRectanglesMethod(int N, bool printOrNo = true);
+    double RightRectanglesMethod(int N, bool printOrNo = true);
+    double MiddleRectanglesMethod(int N, bool printOrNo = true);
+    double TrapezeMethod(int N, bool printOrNo = true);
+    int calcNforRc();
+    int calcNforTr();
+    int calcNforSm();
 };
 
 
